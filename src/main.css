@@ -9,3 +9,16 @@
     height: 30vw;
     width: 30vw;
 }
+.cast{
+    padding-top: 1vw;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.cartObrazok{
+    height: 20vw;
+    width: 20vw;
+}
+.list{
+    gap: 20px;
+}

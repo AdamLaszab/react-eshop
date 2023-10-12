@@ -1,15 +1,15 @@
 import Item from "./Item.jsx"
 import "./main.css"
-export function Shop(){
+export function Shop({changeCart}){
 
     return <div className="start">
-        <Item id={61}/>
-        <Item id={62}/>
-        <Item id={69}/>
-        <Item id={64}/>
-        <Item id={65}/>
-        <Item id={70}/>
-        <Item id={67}/>
-        <Item id={71}/>
+        <Item id={61} changeCart={changeCart}/>
+        <Item id={62} changeCart={changeCart}/>
+        <Item id={69} changeCart={changeCart}/>
+        <Item id={64} changeCart={changeCart}/>
+        <Item id={65} changeCart={changeCart}/>
+        <Item id={70} changeCart={changeCart}/>
+        <Item id={67} changeCart={changeCart}/>
+        <Item id={71} changeCart={changeCart}/>
         </div>
 }

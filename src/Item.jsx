@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./main.css"
-function Item({id}){
+function Item({id,changeCart}){
     const[data,setData]=useState(null);
     const[ammount,setAmmount]=useState(1);
     useEffect(()=>{
@@ -9,7 +9,6 @@ function Item({id}){
         .then((data)=>setData(data))
         .catch((reason)=>{return <div>{reason}</div>})
     },[id])
-    console.log(data);
     if (!data) {
         return <div>Loading...</div>;
     }
@@ -23,6 +22,9 @@ function Item({id}){
             setAmmount(ammount-1);
         }
     }
+    function submit(){
+            changeCart(data,ammount);
+    }
     return <div>
         <div>
         <img className="pic" src={data.images[0]} alt="image"/>
@@ -31,7 +33,7 @@ function Item({id}){
             <div>{data.title}</div> 
             <div>{data.price}$</div>
             <div><button onClick={deductNumber}>{text1}</button>{ammount}<button onClick={addNumber}>{text2}</button></div>
-            <div><button>Add to cart</button></div>
+            <div><button onClick={submit}>Add to cart</button></div>
         </div>
         </div>
 }
