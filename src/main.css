@@ -22,3 +22,8 @@
 .list{
     gap: 20px;
 }
+.mam{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

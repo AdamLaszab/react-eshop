@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { Link, Route,Routes } from 'react-router-dom'
 import { Home } from "./Home.jsx"
 import { Cart } from './Cart.jsx'
@@ -11,7 +9,38 @@ function App() {
   const [cartState, setCartState] = useState([]);
 
   function changeCart(data, number) {
-        setCartState([...cartState, [data, number]]);
+    const index = cartState.findIndex(([data1, _]) => data1 === data);
+  
+    if (index !== -1) {
+      const updatedCartState = cartState.map(([data1, oldNumber], i) => {
+        if (i === index) {
+          return [data1, oldNumber+number]; 
+        }
+        return [data1, oldNumber]; 
+      });
+  
+      setCartState(updatedCartState);
+    } else {
+      setCartState([...cartState, [data, number]]);
+    }
+  }
+  function changeAmmount(id, number) {
+    const index = cartState.findIndex(([data1, _]) => data1.id === id);
+    
+    if (index !== -1) {
+      const updatedCartState = cartState.map(([data1, oldNumber], i) => {
+        if (i === index) {
+          if(oldNumber+number>=1){
+          return [data1, oldNumber + number];
+          }else{
+            return [data1, oldNumber];
+          }
+        }
+        return [data1, oldNumber];
+      });
+      
+      setCartState(updatedCartState);
+    }
   }
   return<>
   
@@ -41,7 +70,7 @@ function App() {
   <Routes>
     <Route path="/" element={<Home />}/>
     <Route path="/shop" element={<Shop changeCart={changeCart}/>} />
-    <Route path="/cart" element={<Cart cartState={cartState}/>} />
+    <Route path="/cart" element={<Cart cartState={cartState} changeAmmount={changeAmmount}/>} />
   </Routes>
   </> 
 }
