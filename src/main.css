@@ -5,10 +5,7 @@
     justify-content: center;
     gap:20px;
 }
-.pic{
-    height: 30vw;
-    width: 30vw;
-}
+
 .cast{
     padding-top: 1vw;
     display: flex;
@@ -26,4 +23,5 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-top: 25px;
 }

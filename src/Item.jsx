@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./main.css"
+import "./index.css"
 function Item({id,changeCart}){
     const[data,setData]=useState(null);
     const[ammount,setAmmount]=useState(1);
@@ -27,13 +28,13 @@ function Item({id,changeCart}){
     }
     return <div>
         <div>
-        <img className="pic" src={data.images[0]} alt="image"/>
+        <img className="lg:w-400px "src={data.images[0]} alt="image"/>
         </div>
         <div>
-            <div>{data.title}</div> 
+            <div className="w-full truncate">{data.title}</div> 
             <div>{data.price}$</div>
-            <div><button onClick={deductNumber}>{text1}</button>{ammount}<button onClick={addNumber}>{text2}</button></div>
-            <div><button onClick={submit}>Add to cart</button></div>
+            <div><button className="" onClick={deductNumber}>{text1}</button>{ammount}<button onClick={addNumber}>{text2}</button></div>
+            <div><button className="bg-blue-700 text:sm hover:bg-blue-600 text-white py-1 px-2 rounded" onClick={submit}>Add to cart</button></div>
         </div>
         </div>
 }

@@ -42,9 +42,9 @@ export function Cart({ cartState, changeAmmount }) {
             </li>
           ))}
         </ul>
-        <div>Total: {total}</div>
+        <div className="pt-8">Total: {total}$</div>
         <div>
-          <button>Purchase</button>
+          <button className="bg-blue-700 text:sm hover:bg-blue-600 text-white py-1 px-2 rounded">Purchase</button>
         </div>
       </div>
     </div>
