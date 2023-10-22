@@ -3,7 +3,7 @@ import "./main.css";
 
 export function Cart({ cartState, changeAmmount }) {
   const [total, changeTotal] = useState(0); 
-
+  const [items,changeItems]=useState(false);
   let text1 = "\u003C";
   let text2 = "\u003E";
 
@@ -20,11 +20,17 @@ export function Cart({ cartState, changeAmmount }) {
     cartState.forEach(element => {
       sum += element[0].price * element[1];
     });
+    if(cartState.length === 0){
+      changeItems(false);
+    }else{
+      changeItems(true);
+    }
     changeTotal(sum);
   }, [cartState]); 
-
+  if(!items){
+    return <div className="pt-20 flex justify-center">Cart is empty</div>
+  }
   return (
-    <div>
       <div className="mam">
         <ul className="list">
           {cartState.map((element) => (
@@ -42,11 +48,13 @@ export function Cart({ cartState, changeAmmount }) {
             </li>
           ))}
         </ul>
+        <div className="flex flex-col justify-center items-center">
         <div className="pt-8">Total: {total}$</div>
         <div>
           <button className="bg-blue-700 text:sm hover:bg-blue-600 text-white py-1 px-2 rounded">Purchase</button>
         </div>
+        </div>
       </div>
-    </div>
+
   );
 }
