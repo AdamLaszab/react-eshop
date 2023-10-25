@@ -28,7 +28,7 @@ export function Cart({ cartState, changeAmmount,removePurchase }) {
     changeTotal(sum);
   }, [cartState]); 
   if(!items){
-    return <div className="pt-20 flex justify-center"><img src="public/assets/empty.png" alt="cart image" /></div>
+    return <div className="pt-20 flex justify-center"><img src="assets/empty.png" alt="cart image" /></div>
   }
   return (
       <div className="mam">
