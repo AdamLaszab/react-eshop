@@ -5,7 +5,7 @@ export function Home(){
     <div className="p-4 md:order-1">
       <div className="aspect-w-16 aspect-h-9 w-full">
         <img
-          src="public/assets/meeting.jpg"
+          src="/public/assets/meeting.jpg"
           alt="Meeting"
           className="object-cover w-full h-full"
         />
