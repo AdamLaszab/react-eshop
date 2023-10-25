@@ -42,6 +42,13 @@ function App() {
       setCartState(updatedCartState);
     }
   }
+  function removePurchase(id) {
+    const index = cartState.findIndex(([data1, _]) => data1.id === id);
+    if (index !== -1) {
+      const updatedCartState = cartState.filter(([data1, _], i) => i !== index);
+      setCartState(updatedCartState);
+    }
+  }
   return<>
   
 <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
@@ -54,7 +61,7 @@ function App() {
       <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cart</button>
     </Link>
   </div>
-  <div className="text-blue-700 flex justify-center flex gap-4">
+  <div className="text-blue-700 flex justify-center space-x-4 lg:pr-14 sm:pr-4">
     
 
         <Link to="/">Home</Link>
@@ -70,7 +77,7 @@ function App() {
   <Routes>
     <Route path="/" element={<Home />}/>
     <Route path="/shop" element={<Shop changeCart={changeCart}/>} />
-    <Route path="/cart" element={<Cart cartState={cartState} changeAmmount={changeAmmount}/>} />
+    <Route path="/cart" element={<Cart cartState={cartState} changeAmmount={changeAmmount} removePurchase={removePurchase}/>} />
   </Routes>
   </> 
 }

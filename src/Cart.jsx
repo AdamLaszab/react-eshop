@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./main.css";
 
-export function Cart({ cartState, changeAmmount }) {
+export function Cart({ cartState, changeAmmount,removePurchase }) {
   const [total, changeTotal] = useState(0); 
   const [items,changeItems]=useState(false);
   let text1 = "\u003C";
@@ -28,7 +28,7 @@ export function Cart({ cartState, changeAmmount }) {
     changeTotal(sum);
   }, [cartState]); 
   if(!items){
-    return <div className="pt-20 flex justify-center">Cart is empty</div>
+    return <div className="pt-20 flex justify-center"><img src="src/assets/empty.png" alt="cart image" /></div>
   }
   return (
       <div className="mam">
@@ -44,6 +44,9 @@ export function Cart({ cartState, changeAmmount }) {
                   <button onClick={() => addAmmount(element[0].id)}>{text2}</button>
                 </div>
                 <div>{element[0].price * element[1]}$</div>
+              </div>
+              <div>
+                <button className="text-red-700 bold lg:text-xl sm:text-lg" onClick={() => removePurchase(element[0].id)}>X</button>
               </div>
             </li>
           ))}

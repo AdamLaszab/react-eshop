@@ -7,7 +7,7 @@ export function Shop({changeCart}){
         <Item id={62} changeCart={changeCart}/>
         <Item id={69} changeCart={changeCart}/>
         <Item id={64} changeCart={changeCart}/>
-        <Item id={65} changeCart={changeCart}/>
+        <Item id={72} changeCart={changeCart}/>
         <Item id={70} changeCart={changeCart}/>
         <Item id={67} changeCart={changeCart}/>
         <Item id={71} changeCart={changeCart}/>

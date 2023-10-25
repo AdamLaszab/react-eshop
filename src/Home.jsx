@@ -17,13 +17,13 @@ export function Home(){
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a eros odio. Proin mauris nibh, mollis ut sodales vitae, facilisis sed magna. Pellentesque at interdum ante, vel maximus risus. Donec vitae orci mauris. Curabitur vitae bibendum diam. Praesent eleifend eget quam accumsan laoreet.
       </div>
     </div>
-    <div className="p-4 order-4">
+    <div className="p-4 lg:order-3 md:order-4">
       <div className="text-blue-700 lg:text-5xl sg:text-4xl bold">Our mission</div>
       <div className="pt-4 lg:text-2xl sg:text-base">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a eros odio. Proin mauris nibh, mollis ut sodales vitae, facilisis sed magna. Pellentesque at interdum ante, vel maximus risus. Donec vitae orci mauris. Curabitur vitae bibendum diam. Praesent eleifend eget quam accumsan laoreet.
       </div>
     </div>
-    <div className="p-4 order-3">
+    <div className="p-4 lg:order-4 md:order-3">
       <div className="aspect-w-16 aspect-h-9 w-full">
         <img className="object-cover w-full h-full min-w-200" src="src/assets/mission.jpg" alt="Mission" />
       </div>
