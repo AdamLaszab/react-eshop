@@ -25,7 +25,7 @@ export function Home(){
     </div>
     <div className="p-4 lg:order-4 md:order-3">
       <div className="aspect-w-16 aspect-h-9 w-full">
-        <img className="object-cover w-full h-full min-w-200" src="/assets/mission.jpg" alt="Mission" />
+        <img className="object-cover w-full h-full min-w-200" src="/assets/mission.jpg" alt="Mission statement" />
       </div>
     </div>
     <div className="p-4 order-5 flex justify-center">
