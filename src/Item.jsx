@@ -5,7 +5,7 @@ function Item({id,changeCart}){
     const[data,setData]=useState(null);
     const[ammount,setAmmount]=useState(1);
     useEffect(()=>{
-        fetch(`https://api.escuelajs.co/api/v1/products/${id}`)
+        fetch(`https://fakestoreapi.com/products/${id}`)
         .then((answer)=>answer.json())
         .then((data)=>setData(data))
         .catch((reason)=>{return <div>{reason}</div>})
@@ -26,9 +26,9 @@ function Item({id,changeCart}){
     function submit(){
             changeCart(data,ammount);
     }
-    return <div>
-        <div>
-        <img className="lg:w-400px "src={data.images[0]} alt="image"/>
+    return <div className="flex-none flex-col justify-center items-center">
+        <div> 
+        <img className="lg:w-72 lg:h-72 md:w-48 md:h-48 w-20 h-20 object-scale-down"src={data.image} alt="image"/>
         </div>
         <div>
             <div className="w-full truncate">{data.title}</div> 

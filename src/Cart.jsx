@@ -27,7 +27,7 @@ export function Cart({ cartState, changeAmmount,removePurchase }) {
     }
     changeTotal(sum);
   }, [cartState]); 
-  if(!items){
+  if(!items){ 
     return <div className="pt-20 flex justify-center"><img src="assets/empty.png" alt="cart image" /></div>
   }
   return (
@@ -35,7 +35,7 @@ export function Cart({ cartState, changeAmmount,removePurchase }) {
         <ul className="list">
           {cartState.map((element) => (
             <li className="cast" key={element[0].id}>
-              <img className="cartObrazok" src={element[0].images[0]} alt="obrazok" />
+              <img className="lg:w-64 lg:h-64 md:w-36 md:h-36 w-12 h-12 object-scale-down" src={element[0].image} alt="obrazok" />
               <div>{element[0].title}</div>
               <div>
                 <div>

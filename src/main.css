@@ -1,15 +1,17 @@
 .start{
     padding-top: 100px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 350px 350px;
     justify-content: center;
-    gap:20px;
+    align-items: center;
+    gap:50px;
 }
 
 .cast{
     padding-top: 1vw;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 20px;
 }
 .cartObrazok{

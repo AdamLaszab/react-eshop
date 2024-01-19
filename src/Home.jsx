@@ -1,6 +1,6 @@
 import "./index.css"
 export function Home(){
-  return <div className="pt-20 flex justify-center">
+  return <div className="pt-20 flex justify-center bg-white">
   <div className="w-4/5 pt-10 grid lg:grid-cols-2 md:grid-cols-1 lg:gap-28 md:gap-8"> 
     <div className="p-4 md:order-1">
       <div className="aspect-w-16 aspect-h-9 w-full">
